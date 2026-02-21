@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import CookieConsent from "./components/CookieConsent";
 import Index from "./pages/Index";
 import Cybersecurity from "./pages/Cybersecurity";
 import CloudServices from "./pages/CloudServices";
@@ -12,7 +14,6 @@ import Contact from "./pages/Contact";
 import FAQs from "./pages/FAQs";
 import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
-
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -21,6 +22,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
+        <CookieConsent />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/cybersecurity" element={<Cybersecurity />} />
